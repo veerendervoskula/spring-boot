@@ -1,4 +1,4 @@
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: spring-boot-on-k8s-deployment
@@ -23,12 +23,13 @@ kind: Service
 metadata:
   name: spring-boot-on-k8s-service
 spec:
+  type: NodePort
   ports:
     - port: 8090
       targetPort: 8090
   selector:
     app: spring-boot-on-k8s-service
-  type: NodePort
+ 
 
 
 
