@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: spring-boot-on-k8s
+  name: spring-boot-on-k8s-deployment
 spec: 
   selector: 
     matchLabels: 
-      app: spring-boot-on-k8s 
+      app: spring-boot-on-k8s-service
   replicas: 3 # tells deployment to run 2 pods matching the template 
   template:
     metadata: 
       labels: 
-        app: spring-boot-on-k8s  
+        app: spring-boot-on-k8s-service
     spec: 
       containers: 
-      - name: spring-boot-on-k8s 
+      - name: spring-boot-on-k8s-service 
         image: vveerender/spring-boot-on-k8s:#{Build.BuildId}#
         ports: 
         - containerPort: 8090 
