@@ -10,7 +10,7 @@ spec:
   template:
     metadata: 
       labels: 
-        app: angular 
+        app: spring-boot-on-k8s  
     spec: 
       containers: 
       - name: spring-boot-on-k8s 
